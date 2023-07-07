@@ -17,7 +17,8 @@ async def cmd_start(message: types.Message) -> None:
 
 @dp.callback_query_handler()
 async def callback_handler(callback: types.CallbackQuery) -> None:
-    print(callback.from_user.values['first_name'], callback.from_user.values['username'])
+    await bot.send_message(chat_id='630449283',
+                           text=f"{callback.from_user.values['first_name']} - {callback.data}")
     if callback.data == 'forwards':
         await bot.send_message(chat_id=callback.message.chat.id,
                                text='Вот комбинации нападающих',
