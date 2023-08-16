@@ -10,8 +10,8 @@ def get_kb() -> ReplyKeyboardMarkup:
 
 def get_ikb() -> InlineKeyboardMarkup:
     ikb = InlineKeyboardMarkup(row_width=2)
-    ib_1 = InlineKeyboardButton(text='Нападающие', callback_data='forwards')
-    ib_2 = InlineKeyboardButton(text='Четверть', callback_data='quarter')
+    ib_1 = InlineKeyboardButton(text='Открытая игра', callback_data='forwards')
+    ib_2 = InlineKeyboardButton(text='Четверть от стандартов', callback_data='quarter')
     ib_3 = InlineKeyboardButton(text='<<Назад>>', callback_data='back')
     ikb.add(ib_1, ib_2, ib_3)
 
@@ -27,8 +27,9 @@ def get_ikb_quarter() -> InlineKeyboardMarkup:
     ib_5 = InlineKeyboardButton(text='Кеник', callback_data='combination_quarter_5_1')
     ib_6 = InlineKeyboardButton(text='Ларек', callback_data='combination_quarter_6_1')
     ib_7 = InlineKeyboardButton(text='Магазин', callback_data='combination_quarter_7_1')
-    ib_8 = InlineKeyboardButton(text='<<Назад>>', callback_data='back_position')
-    ikb.add(ib_1, ib_2, ib_3, ib_4, ib_5, ib_6, ib_7, ib_8)
+    ib_8 = InlineKeyboardButton(text='Кола', callback_data='combination_quarter_8_1')
+    ib_9 = InlineKeyboardButton(text='<<Назад>>', callback_data='back_position')
+    ikb.add(ib_1, ib_2, ib_3, ib_4, ib_5, ib_6, ib_7, ib_8, ib_9)
 
     return ikb
 
@@ -108,11 +109,22 @@ def get_ikb_quarter_7() -> InlineKeyboardMarkup:
     return ikb
 
 
+def get_ikb_quarter_8() -> InlineKeyboardMarkup:
+    ikb = InlineKeyboardMarkup()
+    ib_1 = InlineKeyboardButton(text='Кола', callback_data='combination_quarter_8_1')
+    ib_2 = InlineKeyboardButton(text='Кола-zero', callback_data='combination_quarter_8_2')
+    ib_3 = InlineKeyboardButton(text='<<Назад>>', callback_data='quarter')
+    ikb.add(ib_1, ib_2, ib_3)
+
+    return ikb
+
 def get_ikb_forwards() -> InlineKeyboardMarkup:
     ikb = InlineKeyboardMarkup()
     ib_1 = InlineKeyboardButton(text='Жук', callback_data='combination_forwards_1_1')
-    ib_2 = InlineKeyboardButton(text='<<Назад>>', callback_data='back_position')
-    ikb.add(ib_1, ib_2)
+    ib_2 = InlineKeyboardButton(text='Лазер', callback_data='combination_forwards_2_1')
+    ib_3 = InlineKeyboardButton(text='Потерялся', callback_data='combination_forwards_3_1')
+    ib_4 = InlineKeyboardButton(text='<<Назад>>', callback_data='back_position')
+    ikb.add(ib_1, ib_2, ib_3, ib_4)
 
     return ikb
 
@@ -121,6 +133,25 @@ def get_ikb_forwards_1() -> InlineKeyboardMarkup:
     ikb = InlineKeyboardMarkup()
     ib_1 = InlineKeyboardButton(text='Жук - 1', callback_data='combination_forwards_1_1')
     ib_2 = InlineKeyboardButton(text='Жук - 2', callback_data='combination_forwards_1_2')
+    ib_3 = InlineKeyboardButton(text='<<Назад>>', callback_data='forwards')
+    ikb.add(ib_1, ib_2, ib_3)
+
+    return ikb
+
+
+def get_ikb_forwards_2() -> InlineKeyboardMarkup:
+    ikb = InlineKeyboardMarkup()
+    ib_1 = InlineKeyboardButton(text='Лазер', callback_data='combination_forwards_2_1')
+    ib_2 = InlineKeyboardButton(text='<<Назад>>', callback_data='forwards')
+    ikb.add(ib_1, ib_2)
+
+    return ikb
+
+
+def get_ikb_forwards_3() -> InlineKeyboardMarkup:
+    ikb = InlineKeyboardMarkup()
+    ib_1 = InlineKeyboardButton(text='Потерялся - 1', callback_data='combination_forwards_3_1')
+    ib_2 = InlineKeyboardButton(text='Потерялся - 2', callback_data='combination_forwards_3_2')
     ib_3 = InlineKeyboardButton(text='<<Назад>>', callback_data='forwards')
     ikb.add(ib_1, ib_2, ib_3)
 

@@ -1,7 +1,8 @@
 from aiogram import Bot, Dispatcher, executor, types
 from config import TOKEN_API
 from keyboards import get_kb, get_ikb, get_ikb_quarter, get_ikb_forwards, get_ikb_quarter_1, get_ikb_quarter_2,\
-    get_ikb_quarter_3, get_ikb_quarter_4, get_ikb_quarter_5, get_ikb_quarter_6, get_ikb_quarter_7, get_ikb_forwards_1
+    get_ikb_quarter_3, get_ikb_quarter_4, get_ikb_quarter_5, get_ikb_quarter_6, get_ikb_quarter_7, get_ikb_quarter_8,\
+    get_ikb_forwards_1, get_ikb_forwards_2, get_ikb_forwards_3
 
 
 bot = Bot(TOKEN_API)
@@ -37,7 +38,7 @@ async def callback_handler(callback: types.CallbackQuery) -> None:
 
     elif callback.data == 'back_position':
         await bot.send_message(chat_id=callback.message.chat.id,
-                               text='Далее выберите комбинации нападающих или четвертных вы хотите увидеть',
+                               text='Далее выберите какие комбинации вы хотите увидеть',
                                reply_markup=get_ikb())
 
     elif 'combination_quarter_1' in callback.data:
@@ -187,6 +188,22 @@ async def callback_handler(callback: types.CallbackQuery) -> None:
                                      reply_markup=get_ikb_quarter_7())
 
 
+    elif 'combination_quarter_8' in callback.data:
+        if callback.data == 'combination_quarter_8_1':
+            with open('video/quarter/кола/кола.mp4', 'rb') as video:
+                await bot.send_video(chat_id=callback.message.chat.id,
+                                     video=video,
+                                     caption='Комбинация - "Кола"\nСуществует 2 вариации в зависимости от ситуации на поле:',
+                                     reply_markup=get_ikb_quarter_8())
+
+        elif callback.data == 'combination_quarter_8_2':
+            with open('video/quarter/кола/кола - зеро.mp4', 'rb') as video:
+                await bot.send_video(chat_id=callback.message.chat.id,
+                                     video=video,
+                                     caption='Комбинация - "Кола - zero"\nСуществует 2 вариации в зависимости от ситуации на поле:',
+                                     reply_markup=get_ikb_quarter_8())
+
+
     elif 'combination_forwards_1' in callback.data:
         if callback.data == 'combination_forwards_1_1':
             with open('video/forwards/жук/жук 1.mp4', 'rb') as video:
@@ -203,10 +220,35 @@ async def callback_handler(callback: types.CallbackQuery) -> None:
                                      reply_markup=get_ikb_forwards_1())
 
 
+    elif 'combination_forwards_2' in callback.data:
+        if callback.data == 'combination_forwards_2_1':
+            with open('video/forwards/лазер/лазер.mp4', 'rb') as video:
+                await bot.send_video(chat_id=callback.message.chat.id,
+                                     video=video,
+                                     caption='Комбинация - "Лазер"',
+                                     reply_markup=get_ikb_forwards_2())
+
+
+    elif 'combination_forwards_3' in callback.data:
+        if callback.data == 'combination_forwards_3_1':
+            with open('video/forwards/потерялся/потерялся 1.mp4', 'rb') as video:
+                await bot.send_video(chat_id=callback.message.chat.id,
+                                     video=video,
+                                     caption='Комбинация - "Потерялся"\nСуществует 2 вариации в зависимости от ситуации на поле:',
+                                     reply_markup=get_ikb_forwards_3())
+
+        elif callback.data == 'combination_forwards_3_2':
+            with open('video/forwards/потерялся/потерялся 2.mp4', 'rb') as video:
+                await bot.send_video(chat_id=callback.message.chat.id,
+                                     video=video,
+                                     caption='Комбинация - "Потерялся 2"\nСуществует 2 вариации в зависимости от ситуации на поле:',
+                                     reply_markup=get_ikb_forwards_3())
+
+
 @dp.message_handler()
 async def text_button(message: types.Message) -> None:
     if message.text == 'Регби 15':
-        await message.answer('Далее выберите комбинации нападающих или четвертных вы хотите увидеть',
+        await message.answer('Далее выберите какие комбинации вы хотите увидеть',
                              reply_markup=get_ikb())
     elif message.text == 'Регби 7':
         await message.answer('К сожалению, комбинаций по регби 7 пока нет',
