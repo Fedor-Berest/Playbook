@@ -225,21 +225,14 @@ async def callback_handler(callback: types.CallbackQuery) -> None:
             with open('video/quarter/мини-самолет/мини-самолет 1.mp4', 'rb') as video:
                 await bot.send_video(chat_id=callback.message.chat.id,
                                      video=video,
-                                     caption='Комбинация - "Мини-самолет - 1"\nСуществует 3 вариации в зависимости от ситуации на поле:',
+                                     caption='Комбинация - "Мини-самолет - 1"\nСуществует 2 вариации в зависимости от ситуации на поле:',
                                      reply_markup=get_ikb_quarter_10())
 
         elif callback.data == 'combination_quarter_10_2':
             with open('video/quarter/мини-самолет/мини-самолет 2.mp4', 'rb') as video:
                 await bot.send_video(chat_id=callback.message.chat.id,
                                      video=video,
-                                     caption='Комбинация - "Мини-самолет - 2"\nСуществует 3 вариации в зависимости от ситуации на поле:',
-                                     reply_markup=get_ikb_quarter_10())
-
-        elif callback.data == 'combination_quarter_10_3':
-            with open('video/quarter/мини-самолет/мини-самолет 3.mp4', 'rb') as video:
-                await bot.send_video(chat_id=callback.message.chat.id,
-                                     video=video,
-                                     caption='Комбинация - "Мини-самолет - 3"\nСуществует 3 вариации в зависимости от ситуации на поле:',
+                                     caption='Комбинация - "Мини-самолет - 2"\nСуществует 2 вариации в зависимости от ситуации на поле:',
                                      reply_markup=get_ikb_quarter_10())
 
 

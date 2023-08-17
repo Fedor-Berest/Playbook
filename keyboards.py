@@ -135,9 +135,8 @@ def get_ikb_quarter_10() -> InlineKeyboardMarkup:
     ikb = InlineKeyboardMarkup()
     ib_1 = InlineKeyboardButton(text='Мини-самолет - 1', callback_data='combination_quarter_10_1')
     ib_2 = InlineKeyboardButton(text='Мини-самолет - 2', callback_data='combination_quarter_10_2')
-    ib_3 = InlineKeyboardButton(text='Мини-самолет - 3', callback_data='combination_quarter_10_3')
-    ib_4 = InlineKeyboardButton(text='<<Назад>>', callback_data='quarter')
-    ikb.add(ib_1, ib_2, ib_3, ib_4)
+    ib_3 = InlineKeyboardButton(text='<<Назад>>', callback_data='quarter')
+    ikb.add(ib_1, ib_2, ib_3)
 
     return ikb
 
