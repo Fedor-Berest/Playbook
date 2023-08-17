@@ -2,7 +2,7 @@ from aiogram import Bot, Dispatcher, executor, types
 from config import TOKEN_API
 from keyboards import get_kb, get_ikb, get_ikb_quarter, get_ikb_forwards, get_ikb_quarter_1, get_ikb_quarter_2,\
     get_ikb_quarter_3, get_ikb_quarter_4, get_ikb_quarter_5, get_ikb_quarter_6, get_ikb_quarter_7, get_ikb_quarter_8,\
-    get_ikb_forwards_1, get_ikb_forwards_2, get_ikb_forwards_3
+    get_ikb_quarter_9, get_ikb_quarter_10, get_ikb_forwards_1, get_ikb_forwards_2, get_ikb_forwards_3
 
 
 bot = Bot(TOKEN_API)
@@ -41,7 +41,7 @@ async def callback_handler(callback: types.CallbackQuery) -> None:
                                text='Далее выберите какие комбинации вы хотите увидеть',
                                reply_markup=get_ikb())
 
-    elif 'combination_quarter_1' in callback.data:
+    elif 'combination_quarter_1_' in callback.data:
         if callback.data == 'combination_quarter_1_1':
             with open('video/quarter/самолет/самолет 1.mp4', 'rb') as video:
                 await bot.send_video(chat_id=callback.message.chat.id,
@@ -71,7 +71,7 @@ async def callback_handler(callback: types.CallbackQuery) -> None:
                                      reply_markup=get_ikb_quarter_1())
 
 
-    elif 'combination_quarter_2' in callback.data:
+    elif 'combination_quarter_2_' in callback.data:
         if callback.data == 'combination_quarter_2_1':
             with open('video/quarter/драный квост/драный хвост 1.mp4', 'rb') as video:
                 await bot.send_video(chat_id=callback.message.chat.id,
@@ -108,7 +108,7 @@ async def callback_handler(callback: types.CallbackQuery) -> None:
                                      reply_markup=get_ikb_quarter_2())
 
 
-    elif 'combination_quarter_3' in callback.data:
+    elif 'combination_quarter_3_' in callback.data:
         if callback.data == 'combination_quarter_3_1':
             with open('video/quarter/короток/короток 1.mp4', 'rb') as video:
                 await bot.send_video(chat_id=callback.message.chat.id,
@@ -124,7 +124,7 @@ async def callback_handler(callback: types.CallbackQuery) -> None:
                                      reply_markup=get_ikb_quarter_3())
 
 
-    elif 'combination_quarter_4' in callback.data:
+    elif 'combination_quarter_4_' in callback.data:
         if callback.data == 'combination_quarter_4_1':
             with open('video/quarter/прокол/прокол 1.mp4', 'rb') as video:
                 await bot.send_video(chat_id=callback.message.chat.id,
@@ -140,7 +140,7 @@ async def callback_handler(callback: types.CallbackQuery) -> None:
                                      reply_markup=get_ikb_quarter_4())
 
 
-    elif 'combination_quarter_5' in callback.data:
+    elif 'combination_quarter_5_' in callback.data:
         if callback.data == 'combination_quarter_5_1':
             with open('video/quarter/кеник/кеник 1.mp4', 'rb') as video:
                 await bot.send_video(chat_id=callback.message.chat.id,
@@ -156,7 +156,7 @@ async def callback_handler(callback: types.CallbackQuery) -> None:
                                      reply_markup=get_ikb_quarter_5())
 
 
-    elif 'combination_quarter_6' in callback.data:
+    elif 'combination_quarter_6_' in callback.data:
         if callback.data == 'combination_quarter_6_1':
             with open('video/quarter/ларек/ларек 1.mp4', 'rb') as video:
                 await bot.send_video(chat_id=callback.message.chat.id,
@@ -172,7 +172,7 @@ async def callback_handler(callback: types.CallbackQuery) -> None:
                                      reply_markup=get_ikb_quarter_6())
 
 
-    elif 'combination_quarter_7' in callback.data:
+    elif 'combination_quarter_7_' in callback.data:
         if callback.data == 'combination_quarter_7_1':
             with open('video/quarter/магазин/магазин 1.mp4', 'rb') as video:
                 await bot.send_video(chat_id=callback.message.chat.id,
@@ -188,7 +188,7 @@ async def callback_handler(callback: types.CallbackQuery) -> None:
                                      reply_markup=get_ikb_quarter_7())
 
 
-    elif 'combination_quarter_8' in callback.data:
+    elif 'combination_quarter_8_' in callback.data:
         if callback.data == 'combination_quarter_8_1':
             with open('video/quarter/кола/кола.mp4', 'rb') as video:
                 await bot.send_video(chat_id=callback.message.chat.id,
@@ -204,7 +204,46 @@ async def callback_handler(callback: types.CallbackQuery) -> None:
                                      reply_markup=get_ikb_quarter_8())
 
 
-    elif 'combination_forwards_1' in callback.data:
+    elif 'combination_quarter_9_' in callback.data:
+        if callback.data == 'combination_quarter_9_1':
+            with open('video/quarter/вода/вода 1.mp4', 'rb') as video:
+                await bot.send_video(chat_id=callback.message.chat.id,
+                                     video=video,
+                                     caption='Комбинация - "Вода - 1"\nСуществует 2 вариации в зависимости от ситуации на поле:',
+                                     reply_markup=get_ikb_quarter_9())
+
+        elif callback.data == 'combination_quarter_9_2':
+            with open('video/quarter/вода/вода 2.mp4', 'rb') as video:
+                await bot.send_video(chat_id=callback.message.chat.id,
+                                     video=video,
+                                     caption='Комбинация - "Вода - 2"\nСуществует 2 вариации в зависимости от ситуации на поле:',
+                                     reply_markup=get_ikb_quarter_9())
+
+
+    elif 'combination_quarter_10_' in callback.data:
+        if callback.data == 'combination_quarter_10_1':
+            with open('video/quarter/мини-самолет/мини-самолет 1.mp4', 'rb') as video:
+                await bot.send_video(chat_id=callback.message.chat.id,
+                                     video=video,
+                                     caption='Комбинация - "Мини-самолет - 1"\nСуществует 3 вариации в зависимости от ситуации на поле:',
+                                     reply_markup=get_ikb_quarter_10())
+
+        elif callback.data == 'combination_quarter_10_2':
+            with open('video/quarter/мини-самолет/мини-самолет 2.mp4', 'rb') as video:
+                await bot.send_video(chat_id=callback.message.chat.id,
+                                     video=video,
+                                     caption='Комбинация - "Мини-самолет - 2"\nСуществует 3 вариации в зависимости от ситуации на поле:',
+                                     reply_markup=get_ikb_quarter_10())
+
+        elif callback.data == 'combination_quarter_10_3':
+            with open('video/quarter/мини-самолет/мини-самолет 3.mp4', 'rb') as video:
+                await bot.send_video(chat_id=callback.message.chat.id,
+                                     video=video,
+                                     caption='Комбинация - "Мини-самолет - 3"\nСуществует 3 вариации в зависимости от ситуации на поле:',
+                                     reply_markup=get_ikb_quarter_10())
+
+
+    elif 'combination_forwards_1_' in callback.data:
         if callback.data == 'combination_forwards_1_1':
             with open('video/forwards/жук/жук 1.mp4', 'rb') as video:
                 await bot.send_video(chat_id=callback.message.chat.id,
@@ -220,7 +259,7 @@ async def callback_handler(callback: types.CallbackQuery) -> None:
                                      reply_markup=get_ikb_forwards_1())
 
 
-    elif 'combination_forwards_2' in callback.data:
+    elif 'combination_forwards_2_' in callback.data:
         if callback.data == 'combination_forwards_2_1':
             with open('video/forwards/лазер/лазер.mp4', 'rb') as video:
                 await bot.send_video(chat_id=callback.message.chat.id,
@@ -229,7 +268,7 @@ async def callback_handler(callback: types.CallbackQuery) -> None:
                                      reply_markup=get_ikb_forwards_2())
 
 
-    elif 'combination_forwards_3' in callback.data:
+    elif 'combination_forwards_3_' in callback.data:
         if callback.data == 'combination_forwards_3_1':
             with open('video/forwards/потерялся/потерялся 1.mp4', 'rb') as video:
                 await bot.send_video(chat_id=callback.message.chat.id,

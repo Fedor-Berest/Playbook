@@ -28,8 +28,10 @@ def get_ikb_quarter() -> InlineKeyboardMarkup:
     ib_6 = InlineKeyboardButton(text='Ларек', callback_data='combination_quarter_6_1')
     ib_7 = InlineKeyboardButton(text='Магазин', callback_data='combination_quarter_7_1')
     ib_8 = InlineKeyboardButton(text='Кола', callback_data='combination_quarter_8_1')
-    ib_9 = InlineKeyboardButton(text='<<Назад>>', callback_data='back_position')
-    ikb.add(ib_1, ib_2, ib_3, ib_4, ib_5, ib_6, ib_7, ib_8, ib_9)
+    ib_9 = InlineKeyboardButton(text='Вода', callback_data='combination_quarter_9_1')
+    ib_10 = InlineKeyboardButton(text='Мини-самолет', callback_data='combination_quarter_10_1')
+    ib_11 = InlineKeyboardButton(text='<<Назад>>', callback_data='back_position')
+    ikb.add(ib_1, ib_2, ib_3, ib_4, ib_5, ib_6, ib_7, ib_8, ib_9, ib_10, ib_11)
 
     return ikb
 
@@ -117,6 +119,28 @@ def get_ikb_quarter_8() -> InlineKeyboardMarkup:
     ikb.add(ib_1, ib_2, ib_3)
 
     return ikb
+
+
+def get_ikb_quarter_9() -> InlineKeyboardMarkup:
+    ikb = InlineKeyboardMarkup()
+    ib_1 = InlineKeyboardButton(text='Вода - 1', callback_data='combination_quarter_9_1')
+    ib_2 = InlineKeyboardButton(text='Вода - 2', callback_data='combination_quarter_9_2')
+    ib_3 = InlineKeyboardButton(text='<<Назад>>', callback_data='quarter')
+    ikb.add(ib_1, ib_2, ib_3)
+
+    return ikb
+
+
+def get_ikb_quarter_10() -> InlineKeyboardMarkup:
+    ikb = InlineKeyboardMarkup()
+    ib_1 = InlineKeyboardButton(text='Мини-самолет - 1', callback_data='combination_quarter_10_1')
+    ib_2 = InlineKeyboardButton(text='Мини-самолет - 2', callback_data='combination_quarter_10_2')
+    ib_3 = InlineKeyboardButton(text='Мини-самолет - 3', callback_data='combination_quarter_10_3')
+    ib_4 = InlineKeyboardButton(text='<<Назад>>', callback_data='quarter')
+    ikb.add(ib_1, ib_2, ib_3, ib_4)
+
+    return ikb
+
 
 def get_ikb_forwards() -> InlineKeyboardMarkup:
     ikb = InlineKeyboardMarkup()
